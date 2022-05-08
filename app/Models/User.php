@@ -24,7 +24,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'email',
         'password',
         'two_factor_auth_type',
-        'phone_number'
+        'phone_number',
+        'is_admin',
+        'is_moderator'
     ];
 
     /**
@@ -69,7 +71,7 @@ class User extends Authenticatable implements MustVerifyEmail
     /**
      * Send the password reset notification.
      *
-     * @param  string  $token
+     * @param string $token
      * @return void
      */
     public function sendPasswordResetNotification($token)
@@ -85,5 +87,15 @@ class User extends Authenticatable implements MustVerifyEmail
     public function sendEmailVerificationNotification()
     {
         $this->notify(new VerifyEmailNotification());
+    }
+
+    public function isAdmin()
+    {
+        return $this->is_admin;
+    }
+
+    public function isModerator()
+    {
+        return $this->is_moderator;
     }
 }
