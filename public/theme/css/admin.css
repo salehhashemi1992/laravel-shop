@@ -15,19 +15,22 @@
     text-align: left;
 }
 
+
+
 body {
   font-family: Vazirmatn, sans-serif;
 }
 
-.dropdown-menu-end {
-    left: 0;
-    right: auto;
+.form-group[class*=has-icon-].has-icon-left .form-control-icon {
+  right: 0;
+  left: unset;
 }
 
-.dropdown-item, .dropdown-header {
-    text-align: right;
+.form-group[class*=has-icon-].has-icon-left .form-control {
+  padding-right: 2.5rem;
+  text-align: right;
 }
 
-.sidebar-wrapper .menu .sidebar-link span {
-    margin-right: 1rem;
+.sidebar-link span {
+  margin-right: 1rem;
 }

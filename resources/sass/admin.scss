@@ -4,3 +4,17 @@
 body {
     font-family: Vazirmatn, sans-serif;
 }
+
+.form-group[class*=has-icon-].has-icon-left .form-control-icon {
+    right: 0;
+    left: unset;
+}
+
+.form-group[class*=has-icon-].has-icon-left .form-control {
+    padding-right: 2.5rem;
+    text-align: right;
+}
+
+ .sidebar-link span {
+     margin-right: 1rem;
+ }

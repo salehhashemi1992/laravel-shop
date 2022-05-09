@@ -51,6 +51,7 @@
 <script src="{{$base}}/theme/js/pages/dashboard.js"></script>
 
 <script src="{{asset('theme/js/admin.js')}}"></script>
+@include('sweet::alert')
 </body>
 
 </html>
