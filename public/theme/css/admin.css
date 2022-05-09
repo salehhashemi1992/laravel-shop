@@ -6,6 +6,7 @@
 
 #main {
     margin-right: 300px;
+    margin-left: 0;
     padding: 2rem;
 }
 
@@ -14,8 +15,19 @@
     text-align: left;
 }
 
-
-
 body {
   font-family: Vazirmatn, sans-serif;
+}
+
+.dropdown-menu-end {
+    left: 0;
+    right: auto;
+}
+
+.dropdown-item, .dropdown-header {
+    text-align: right;
+}
+
+.sidebar-wrapper .menu .sidebar-link span {
+    margin-right: 1rem;
 }
