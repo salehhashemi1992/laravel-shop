@@ -1,0 +1,15 @@
+#sidebar.active .sidebar-wrapper {
+    right: 0;
+}
+
+#main {
+    margin-right: 300px;
+    padding: 2rem;
+}
+
+.sidebar-wrapper .menu .sidebar-item.has-sub .sidebar-link:after {
+    left: 15px;
+    text-align: left;
+}
+
+
