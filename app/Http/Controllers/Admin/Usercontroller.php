@@ -16,7 +16,15 @@ class Usercontroller extends Controller
      */
     public function index()
     {
-        $users = User::paginate(2);
+        $users = User::query();
+        if ($phrase = \request('search')) {
+            $users->where('name', 'LIKE', "%{$phrase}%")->orWhere('email', 'LIKE', "%{$phrase}%")->orWhere('id', 'LIKE', "%{$phrase}%");
+        }
+
+        if (!is_null(\request('just_moderator'))) {
+            $users->where('is_moderator', 1);
+        }
+        $users = $users->latest()->paginate(2);
         return view('admin.users.list', compact('users'));
     }
 
@@ -46,7 +54,7 @@ class Usercontroller extends Controller
 
         $user = User::create($data);
 
-        if($request->has('verify')) {
+        if ($request->has('verify')) {
             $user->markEmailAsVerified();
         }
 
@@ -91,7 +99,7 @@ class Usercontroller extends Controller
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
         ]);
 
-        if(!is_null($request->password)) {
+        if (!is_null($request->password)) {
             $request->validate([
                 'password' => ['required', 'string', 'min:8', 'confirmed'],
             ]);
@@ -101,7 +109,7 @@ class Usercontroller extends Controller
 
         $user->update($data);
 
-        if($request->has('verify')) {
+        if ($request->has('verify')) {
             $user->markEmailAsVerified();
         }
 

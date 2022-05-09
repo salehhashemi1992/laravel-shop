@@ -15,7 +15,7 @@
                            aria-expanded="false">
                             <i class='bi bi-envelope bi-sub fs-4 text-gray-600'></i>
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <li>
                                 <h6 class="dropdown-header">Mail</h6>
                             </li>
@@ -27,7 +27,7 @@
                            aria-expanded="false">
                             <i class='bi bi-bell bi-sub fs-4 text-gray-600'></i>
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <li>
                                 <h6 class="dropdown-header">Notifications</h6>
                             </li>
@@ -49,7 +49,7 @@
                             </div>
                         </div>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <li>
                             <h6 class="dropdown-header">Hello, John!</h6>
                         </li>

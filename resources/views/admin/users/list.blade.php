@@ -4,9 +4,24 @@
 @component('admin.layouts.content', ['title' => 'لیست کاربران'])
     <div class="card">
         <div class="card-body">
-            <div class="mb-5">
-                <a href="{{route('admin.users.create')}}" class="btn btn-primary">کاربر جدید</a>
+            <div class="mb-5 d-flex justify-content-between">
+                <div class="p-2">
+                    <a href="{{route('admin.users.create')}}" class="btn btn-primary">کاربر جدید</a>
+                </div>
+                <div class="p-2">
+                    <form>
+                        <div class="input-group">
+                                <div class="checkbox text-end mx-4 p-2">
+                                    <input type="checkbox" name="just_moderator" id="just_moderator" class="form-check-input " @if(!is_null(request('just_moderator'))) checked @endif>
+                                    <label for="just_moderator" >فقط مدیران</label>
+                                </div>
+                            <input name="search" value="{{request('search')}}" type="search" class="form-control rounded" placeholder="متن مورد نظر" aria-label="Search" aria-describedby="search-addon" />
+                            <button type="submit"  class="btn btn-outline-primary">جست و جو</button>
+                        </div>
+                    </form>
+                </div>
             </div>
+
             <section class="row">
                 <div class="table-responsive">
                     <table class="table mb-4 table-striped table-hover table-bordered">
