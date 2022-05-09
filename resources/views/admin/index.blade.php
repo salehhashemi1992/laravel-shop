@@ -1,7 +1,7 @@
 <?php $base = env('MAIN_PANEL_ASSETS_DIR') ?>
 
 
-@component('admin.layouts.content')
+@component('admin.layouts.content', ['title' => 'صفحه اصلی'])
     <section class="row">
         <div class="col-12 col-lg-9">
             <div class="row">

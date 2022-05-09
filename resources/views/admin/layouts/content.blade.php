@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="page-heading">
-        <h3>Profile Statistics</h3>
+        <h3>{{$title}}</h3>
     </div>
     <div class="page-content">
         {{ $slot }}
