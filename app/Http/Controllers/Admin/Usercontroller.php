@@ -16,7 +16,7 @@ class Usercontroller extends Controller
      */
     public function index()
     {
-        $users = User::paginate(10);
+        $users = User::paginate(2);
         return view('admin.users.list', compact('users'));
     }
 
@@ -117,8 +117,12 @@ class Usercontroller extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+
+        alert()->success('کاربر با موفقیت حذف شد');
+
+        return redirect(route('admin.users.index'));
     }
 }

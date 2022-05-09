@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
@@ -24,12 +25,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Blade::directive('recaptcha', function () {
-            return "
-            <script src=\"https://www.google.com/recaptcha/api.js?hl=fa\" async defer></script>
-            <div class=\"g-recaptcha @error(\'g-recaptcha-response\') is-invalid @enderror\"
-                                        data-sitekey=\"{{env(\'GOOGLE_RECAPTCHA_SITE_KEY\')}}\"></div>
-           ";
-        });
+        Paginator::useBootstrap();
     }
 }

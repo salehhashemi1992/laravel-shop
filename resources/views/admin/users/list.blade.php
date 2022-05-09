@@ -34,7 +34,12 @@
                                 @endif
                                 <td>
                                     <a href="{{route('admin.users.edit', $user->id)}}" class="btn btn-primary btn-sm">ویرایش</a>
-                                    <a href="#" class="btn btn-danger btn-sm">حذف</a>
+                                    <form class="d-inline" action="{{route('admin.users.destroy', $user->id)}}"
+                                          method="post">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger btn-sm">حذف</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
@@ -42,6 +47,9 @@
                     </table>
                 </div>
             </section>
+        </div>
+        <div class="card-footer">
+            {{ $users->render() }}
         </div>
     </div>
 
