@@ -26,7 +26,7 @@ Laravel is my lovely favorite PHP framework, so I worked on it and add some init
 This Project is based on laravel version 8.
 
 ### Simple Dashboard
-<img width="350" src="https://github.com/salehhashemi1992/laravel-shop/blob/master/readme-assets/dash.jpg?raw=true">
+<img width="400" src="https://github.com/salehhashemi1992/laravel-shop/blob/master/readme-assets/dash.jpg?raw=true">
 
 ### Recaptcha 
 
