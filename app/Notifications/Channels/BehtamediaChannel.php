@@ -31,7 +31,7 @@ class BehtamediaChannel
             curl_setopt($handler, CURLOPT_POSTFIELDS, $param);
             curl_setopt($handler, CURLOPT_RETURNTRANSFER, true);
             $Response = json_decode(curl_exec($handler));
-            dd($Response);
+
             $ResponseCode = $Response->Result;
             if ($ResponseCode == 1) {
                 //
@@ -40,7 +40,7 @@ class BehtamediaChannel
                 debugbar()->error($Response);
             }
         } catch (\Exception $e) {
-            throw $e;
+            alert()->error('مشکلی در ارسال پیامک بوجود آمده است.');
         }
     }
 

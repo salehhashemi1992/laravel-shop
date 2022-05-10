@@ -12,18 +12,13 @@ class ActivationCodeNotification extends Notification
 {
     use Queueable;
 
-    public $token;
-    public $phone_number;
-
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($token, $phone_number)
+    public function __construct(public $token, public $phone_number)
     {
-        $this->token = $token;
-        $this->phone_number = $phone_number;
     }
 
     /**
