@@ -7,4 +7,4 @@ Route::get('/', function () {
     return view('admin.index');
 });
 
-Route::resource('users', \App\Http\Controllers\Admin\Usercontroller::class);
+Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
