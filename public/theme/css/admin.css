@@ -34,3 +34,7 @@ body {
 .sidebar-link span {
   margin-right: 1rem;
 }
+
+.dropdown-menu li * {
+  text-align: right;
+}

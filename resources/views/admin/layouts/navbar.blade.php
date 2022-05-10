@@ -17,9 +17,9 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <li>
-                                <h6 class="dropdown-header">Mail</h6>
+                                <h6 class="dropdown-header">پیام خصوصی</h6>
                             </li>
-                            <li><a class="dropdown-item" href="#">No new mail</a></li>
+                            <li><a class="dropdown-item" href="#">هیچ پیام خصوصی وجود ندارد</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown me-3">
@@ -29,9 +29,9 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <li>
-                                <h6 class="dropdown-header">Notifications</h6>
+                                <h6 class="dropdown-header">اعلان ها</h6>
                             </li>
-                            <li><a class="dropdown-item">No notification available</a></li>
+                            <li><a class="dropdown-item">هیچ اعلان جدیدی وجود ندارد</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -39,8 +39,8 @@
                     <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
                         <div class="user-menu d-flex">
                             <div class="user-name text-end me-3">
-                                <h6 class="mb-0 text-gray-600">John Ducky</h6>
-                                <p class="mb-0 text-sm text-gray-600">Administrator</p>
+                                <h6 class="mb-0 text-gray-600">{{auth()->user()->name}}</h6>
+                                <p class="mb-0 text-sm text-gray-600">مدیر کل</p>
                             </div>
                             <div class="user-img d-flex align-items-center">
                                 <div class="avatar avatar-md">
@@ -51,19 +51,26 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <li>
-                            <h6 class="dropdown-header">Hello, John!</h6>
+                            <h6 class="dropdown-header">سلام {{auth()->user()->name}}</h6>
                         </li>
-                        <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-person me-2"></i> My
-                                Profile</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-gear me-2"></i>
-                                Settings</a></li>
+                        <li><a class="dropdown-item" href="{{route('profile.index')}}"><i
+                                    class="icon-mid bi bi-person me-2"></i>
+                                پروفایل</a></li>
                         <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-wallet me-2"></i>
                                 Wallet</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#"><i
-                                    class="icon-mid bi bi-box-arrow-left me-2"></i> Logout</a></li>
+                        <li><a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                خروج
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </li>
                     </ul>
                 </div>
             </div>

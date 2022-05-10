@@ -1,5 +1,5 @@
 @extends('profile.layout')
 
 @section('profile.body')
-    <h3>My Profile</h3>
+    <h3>صفحه پروفایل کاربری</h3>
 @endsection
