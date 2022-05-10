@@ -17,8 +17,8 @@ class BehtamediaChannel
             $url = 'http://panel.behtamedia.ir/webservice/server';
             $param = [
                 'Action' => 'Send',
-                'username' => '9178967656',
-                'password' => '33773377',
+                'username' => env('BEHTAMEDIA_USERNAME'),
+                'password' => env('BEHTAMEDIA_PASSWORD'),
                 'type' => 1,
                 'from' => '985000988',
                 'text' => $text,
