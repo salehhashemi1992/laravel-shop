@@ -7,6 +7,7 @@
 Laravel is my lovely favorite PHP framework, so I worked on it and add some initial features like:
 
 - Google Authentication System
+- Customized email verification after registration
 - Recaptcha as a rule
 - Two-factor authentication as trait
 - A simple admin panel for managing users (CRUD and search system)
