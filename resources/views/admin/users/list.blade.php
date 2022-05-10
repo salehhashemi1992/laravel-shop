@@ -11,12 +11,16 @@
                 <div class="p-2">
                     <form>
                         <div class="input-group">
-                                <div class="checkbox text-end mx-4 p-2">
-                                    <input type="checkbox" name="just_moderator" id="just_moderator" class="form-check-input " @if(!is_null(request('just_moderator'))) checked @endif>
-                                    <label for="just_moderator" >فقط مدیران</label>
-                                </div>
-                            <input name="search" value="{{request('search')}}" type="search" class="form-control rounded" placeholder="متن مورد نظر" aria-label="Search" aria-describedby="search-addon" />
-                            <button type="submit"  class="btn btn-outline-primary">جست و جو</button>
+                            <div class="checkbox text-end mx-4 p-2">
+                                <input type="checkbox" name="just_moderator" id="just_moderator"
+                                       class="form-check-input "
+                                       @if(!is_null(request('just_moderator'))) checked @endif>
+                                <label for="just_moderator">فقط مدیران</label>
+                            </div>
+                            <input name="search" value="{{request('search')}}" type="search"
+                                   class="form-control rounded" placeholder="متن مورد نظر" aria-label="Search"
+                                   aria-describedby="search-addon"/>
+                            <button type="submit" class="btn btn-outline-primary">جست و جو</button>
                         </div>
                     </form>
                 </div>
@@ -48,13 +52,16 @@
 
                                 @endif
                                 <td>
-                                    <a href="{{route('admin.users.edit', $user->id)}}" class="btn btn-primary btn-sm">ویرایش</a>
-                                    <form class="d-inline" action="{{route('admin.users.destroy', $user->id)}}"
-                                          method="post">
-                                        @method('DELETE')
-                                        @csrf
-                                        <button type="submit" class="btn btn-danger btn-sm">حذف</button>
-                                    </form>
+                                    @can('edit', $user)
+                                        <a href="{{route('admin.users.edit', $user->id)}}"
+                                           class="btn btn-primary btn-sm">ویرایش</a>
+                                        <form class="d-inline" action="{{route('admin.users.destroy', $user->id)}}"
+                                              method="post">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger btn-sm">حذف</button>
+                                        </form>
+                                    @endcan
                                 </td>
                             </tr>
                         @endforeach
