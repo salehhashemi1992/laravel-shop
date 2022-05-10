@@ -49,7 +49,7 @@ class LoginController extends Controller
      */
     public function authenticated(Request $request, $user)
     {
-        return $this->loggendin($request, $user);
+        return $this->loggedin($request, $user);
     }
 
     /**

@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 trait TwoFactorAuthentication
 {
-    public function loggendin(Request $request, User $user)
+    public function loggedin(Request $request, User $user)
     {
         if ($user->isActiveTwoFactor()) {
             $this->loginThenRedirectToTokenPage($request, $user);
