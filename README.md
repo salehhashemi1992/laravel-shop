@@ -10,13 +10,17 @@ Laravel is my lovely favorite PHP framework, so I worked on it and add some init
 - Customized email verification after registration
 - Recaptcha as a rule
 - Two-factor authentication as trait
+- Adding Admin Authorization system as a Middleware
 - A simple admin panel for managing users (CRUD and search system)
 - A sample of how to use a template in laravel using slot, components, yield, etc.
-- Simple use of scss
+- Using of scss
 - Using sweet alert system
 - Sending sms with notification system and queue management system
 - Using component tag system
 - Using Markdown Mail system
+- Split the route system
+- Working with migrations and adding some new migration files
+- Adding a helper php file to the composer.json
 - etc
 
 This Project is based on laravel version 8.
