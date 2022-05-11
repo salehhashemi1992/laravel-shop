@@ -13,10 +13,12 @@ class AdminChanges extends Migration
      */
     public function up()
     {
-        Schema::table('users', function($table) {
-            $table->boolean('is_admin')->default(0);
-            $table->boolean('is_moderator')->default(0);
-        });
+        if (!Schema::hasColumns('users', ['is_admin', 'is_moderator'])) {
+            Schema::table('users', function ($table) {
+                $table->boolean('is_admin')->default(0);
+                $table->boolean('is_moderator')->default(0);
+            });
+        }
     }
 
     /**
@@ -26,7 +28,7 @@ class AdminChanges extends Migration
      */
     public function down()
     {
-        Schema::table('users', function($table) {
+        Schema::table('users', function ($table) {
             $table->dropColumn('is_admin');
             $table->dropColumn('is_moderator');
         });
