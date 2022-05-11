@@ -56,8 +56,6 @@
                         <li><a class="dropdown-item" href="{{route('profile.index')}}"><i
                                     class="icon-mid bi bi-person me-2"></i>
                                 پروفایل</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-wallet me-2"></i>
-                                Wallet</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
