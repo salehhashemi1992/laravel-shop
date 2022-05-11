@@ -31,7 +31,7 @@ class UserController extends Controller
         if (!is_null(\request('just_moderator'))) {
             $users->where('is_moderator', 1);
         }
-        $users = $users->latest()->paginate(2);
+        $users = $users->latest()->paginate(10);
         return view('admin.users.list', compact('users'));
     }
 
