@@ -16,13 +16,8 @@ class PermissionController extends Controller
 
     public function manage(Request $request, User $user)
     {
-        $data = $request->validate([
-            'permissions' => ['required', 'array'],
-            'roles' => ['required', 'array'],
-        ]);
-
-        $user->permissions()->sync($data['permissions']);
-        $user->roles()->sync($data['roles']);
+        $user->permissions()->sync($request->permissions);
+        $user->roles()->sync($request->roles);
 
         alert()->success('به روزرسانی ها با موفقیت ایجاد شد');
 

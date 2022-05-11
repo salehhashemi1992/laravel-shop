@@ -12,22 +12,24 @@
                 </li>
 
                 <li class="sidebar-item  has-sub {{isActive(['admin.users.index', 'admin.users.edit', 'admin.users.create'])}}">
-                    <a href="#" class='sidebar-link' >
+                    <a href="#" class='sidebar-link'>
                         <i class="icon bi-people-fill"></i>
                         <span>کاربران</span>
                     </a>
-                    <ul class="submenu  {{isActive(['admin.users.index', 'admin.users.edit', 'admin.users.create'])}}">
-                        <li class="submenu-item">
-                            <a href="{{route('admin.users.index')}}">
-                                <i class="icon bi-person-fill"></i>
-                                لیست کاربران</a>
-                        </li>
+                    @can('all-users')
+                        <ul class="submenu  {{isActive(['admin.users.index', 'admin.users.edit', 'admin.users.create'])}}">
+                            <li class="submenu-item">
+                                <a href="{{route('admin.users.index')}}">
+                                    <i class="icon bi-person-fill"></i>
+                                    لیست کاربران</a>
+                            </li>
 
-                    </ul>
+                        </ul>
+                    @endcan
                 </li>
 
                 <li class="sidebar-item  has-sub {{isActive(['admin.permissions.index', 'admin.roles.index'])}}">
-                    <a href="#" class='sidebar-link' >
+                    <a href="#" class='sidebar-link'>
                         <i class="icon bi-people-fill"></i>
                         <span>دسترسی ها</span>
                     </a>

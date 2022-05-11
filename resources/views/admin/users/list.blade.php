@@ -5,9 +5,11 @@
     <div class="card">
         <div class="card-body">
             <div class="mb-5 d-flex justify-content-between">
-                <div class="p-2">
-                    <a href="{{route('admin.users.create')}}" class="btn btn-primary">کاربر جدید</a>
-                </div>
+                @can('create-user	')
+                    <div class="p-2">
+                        <a href="{{route('admin.users.create')}}" class="btn btn-primary">کاربر جدید</a>
+                    </div>
+                @endcan
                 <div class="p-2">
                     <form>
                         <div class="input-group">
