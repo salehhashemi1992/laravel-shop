@@ -21,7 +21,7 @@
                                         <div class="position-relative">
                                             <input type="text" name="name" required class="form-control"
                                                    placeholder="نام کاربر..."
-                                                   id="name" value="{{$user->name}}">
+                                                   id="name" value="{{old('name', $user->name)}}">
                                             <div class="form-control-icon">
                                                 <i class="bi bi-person"></i>
                                             </div>
@@ -36,7 +36,7 @@
                                         <div class="position-relative">
                                             <input type="email" name="email" class="form-control"
                                                    placeholder="ایمیل کاربر..."
-                                                   id="email" value="{{$user->email}}">
+                                                   id="email" value="{{old('email', $user->email)}}">
                                             <div class="form-control-icon">
                                                 <i class="bi bi-envelope"></i>
                                             </div>

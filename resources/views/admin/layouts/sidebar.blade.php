@@ -26,6 +26,27 @@
                     </ul>
                 </li>
 
+                <li class="sidebar-item  has-sub {{isActive(['admin.permissions.index'])}}">
+                    <a href="#" class='sidebar-link' >
+                        <i class="icon bi-people-fill"></i>
+                        <span>دسترسی ها</span>
+                    </a>
+                    <ul class="submenu  {{isActive(['admin.permissions.index'])}}">
+                        <li class="submenu-item">
+                            <a href="{{route('admin.permissions.index')}}">
+                                <i class="icon bi-person-fill"></i>
+                                مدیریت نقش ها</a>
+                        </li>
+                    </ul>
+                    <ul class="submenu  {{isActive(['admin.permissions.index'])}}">
+                        <li class="submenu-item">
+                            <a href="{{route('admin.permissions.index')}}">
+                                <i class="icon bi-person-fill"></i>
+                                مدیریت دسترسی ها</a>
+                        </li>
+                    </ul>
+                </li>
+
             </ul>
         </div>
         <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
