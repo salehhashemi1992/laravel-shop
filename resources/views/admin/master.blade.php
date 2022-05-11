@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="{{asset('theme/css/admin.css')}}">
     <link rel="shortcut icon" href="/theme/images/favicon.svg" type="image/x-icon">
 
+    <link rel="stylesheet" href="{{$base}}/theme/vendors/choices.js/choices.min.css">
+    <link rel="stylesheet" href="{{$base}}/theme/vendors/perfect-scrollbar/perfect-scrollbar.css">
+
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v32.102/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
 
 </head>
@@ -34,13 +37,11 @@
         @include('admin.layouts.footer')
     </div>
 </div>
-<script src="{{$base}}/theme/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-<script src="{{$base}}/theme/js/bootstrap.bundle.min.js"></script>
-
-<script src="{{$base}}/theme/vendors/apexcharts/apexcharts.js"></script>
-<script src="{{$base}}/theme/js/pages/dashboard.js"></script>
+<script src="{{asset('theme/vendors/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
+<script src="{{asset('theme/js/bootstrap.bundle.min.js')}}"></script>
 
 <script src="{{asset('theme/js/admin.js')}}"></script>
+@yield('scripts')
 @include('sweet::alert')
 </body>
 

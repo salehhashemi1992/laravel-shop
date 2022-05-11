@@ -47,7 +47,7 @@
                                 <div class="col-md-8">
                                     <div class="form-group has-icon-left">
                                         <div class="position-relative">
-                                            <select class="form-control" name="permissions[]" id="permissions" multiple>
+                                            <select class="choices form-select multiple-remove" name="permissions[]" id="permissions" multiple>
                                                 @foreach(\App\Models\Permission::all() as $permission)
                                                     <option value="{{$permission->id}}" {{in_array($permission->id, $role->permissions->pluck('id')->toArray()) ? 'selected' : ''}}>{{$permission->name}} - {{$permission->label}}</option>
                                                 @endforeach

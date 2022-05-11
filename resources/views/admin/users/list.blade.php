@@ -52,16 +52,18 @@
 
                                 @endif
                                 <td>
-                                    @can('edit', $user)
-                                        <a href="{{route('admin.users.edit', $user->id)}}"
-                                           class="btn btn-primary btn-sm">ویرایش</a>
-                                        <form class="d-inline" action="{{route('admin.users.destroy', $user->id)}}"
-                                              method="post">
-                                            @method('DELETE')
-                                            @csrf
-                                            <button type="submit" class="btn btn-danger btn-sm">حذف</button>
-                                        </form>
-                                    @endcan
+                                    <a href="{{route('admin.users.edit', $user->id)}}"
+                                       class="btn btn-primary btn-sm">ویرایش</a>
+                                    @if($user->isModerator())
+                                        <a href="{{route('admin.users.permissions', $user->id)}}"
+                                           class="btn btn-warning btn-sm">دسترسی ها</a>
+                                    @endif
+                                    <form class="d-inline" action="{{route('admin.users.destroy', $user->id)}}"
+                                          method="post">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger btn-sm">حذف</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

@@ -8,3 +8,9 @@
         {{ $slot }}
     </div>
 @endsection
+
+@section('scripts')
+    <?php $base = env('MAIN_PANEL_ASSETS_DIR') ?>
+    <script src="{{$base}}/theme/vendors/choices.js/choices.min.js"></script>
+@endsection
+

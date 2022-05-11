@@ -44,7 +44,7 @@
 
                                 <div class="col-12 d-flex justify-content-end">
                                     <button type="submit" class="btn btn-primary me-1 mb-1">ویرایش کاربر</button>
-                                    <a href="{{route('admin.permission.index')}}" type="reset"
+                                    <a href="{{route('admin.permissions.index')}}" type="reset"
                                        class="btn btn-light-secondary me-1 mb-1">لغو</a>
                                 </div>
                             </div>

@@ -37,8 +37,6 @@
                                 <i class="icon bi-person-fill"></i>
                                 مدیریت دسترسی ها</a>
                         </li>
-                    </ul>
-                    <ul class="submenu  {{isActive(['admin.permissions.index', 'admin.roles.index'])}}">
                         <li class="submenu-item">
                             <a href="{{route('admin.roles.index')}}">
                                 <i class="icon bi-person-fill"></i>
