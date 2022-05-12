@@ -8,4 +8,9 @@ if (!function_exists('isActive')) {
         }
         return \Illuminate\Support\Facades\Route::currentRouteName() == $route ? 'active' : '';
     }
+
+    function isStartsWith($route)
+    {
+        return str_starts_with(\Illuminate\Support\Facades\Route::currentRouteName(), $route) ? 'active' : '';
+    }
 }

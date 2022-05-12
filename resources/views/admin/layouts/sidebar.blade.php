@@ -28,18 +28,18 @@
                     @endcan
                 </li>
 
-                <li class="sidebar-item  has-sub {{isActive(['admin.permissions.index', 'admin.roles.index'])}}">
+                <li class="sidebar-item  has-sub {{isActive(['admin.permissions.index', 'admin.roles.index', 'admin.permissions.create', 'admin.permissions.edit'])}}">
                     <a href="#" class='sidebar-link'>
                         <i class="icon bi-people-fill"></i>
                         <span>دسترسی ها</span>
                     </a>
-                    <ul class="submenu  {{isActive(['admin.permissions.index', 'admin.roles.index'])}}">
-                        <li class="submenu-item">
+                    <ul class="submenu {{isStartsWith('admin.permissions')}} {{isStartsWith('admin.roles')}}">
+                        <li class="submenu-item {{isStartsWith('admin.permissions')}}">
                             <a href="{{route('admin.permissions.index')}}">
                                 <i class="icon bi-person-fill"></i>
                                 مدیریت دسترسی ها</a>
                         </li>
-                        <li class="submenu-item">
+                        <li class="submenu-item {{isStartsWith('admin.roles')}}">
                             <a href="{{route('admin.roles.index')}}">
                                 <i class="icon bi-person-fill"></i>
                                 مدیریت نقش ها</a>
@@ -47,6 +47,19 @@
                     </ul>
                 </li>
 
+                <li class="sidebar-item  has-sub {{isStartsWith('admin.products')}}">
+                    <a href="#" class='sidebar-link'>
+                        <i class="icon bi-people-fill"></i>
+                        <span>محصولات</span>
+                    </a>
+                    <ul class="submenu {{isStartsWith('admin.products')}}">
+                        <li class="submenu-item">
+                            <a href="{{route('admin.products.index')}}">
+                                <i class="icon bi-person-fill"></i>
+                                مدیریت محصولات</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
