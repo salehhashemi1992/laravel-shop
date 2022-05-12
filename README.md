@@ -21,6 +21,7 @@ Laravel is my lovely favorite PHP framework, so I worked on it and add some init
 - Split the route system
 - Working with migrations and adding some new migration files
 - Adding a helper php file to the composer.json
+- Implementing a complete ACL system to manage user roles and permissions 
 - etc
 
 This Project is based on laravel version 8.
