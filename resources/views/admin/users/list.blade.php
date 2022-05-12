@@ -5,7 +5,7 @@
     <div class="card">
         <div class="card-body">
             <div class="mb-5 d-flex justify-content-between">
-                @can('create-user	')
+                @can('create-user')
                     <div class="p-2">
                         <a href="{{route('admin.users.create')}}" class="btn btn-primary">کاربر جدید</a>
                     </div>
@@ -75,7 +75,7 @@
             </section>
         </div>
         <div class="card-footer">
-            {{ $users->render() }}
+            {{ $users->appends(['search' => request('search')])->render() }}
         </div>
     </div>
 
