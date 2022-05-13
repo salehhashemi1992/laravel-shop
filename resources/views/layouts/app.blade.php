@@ -9,11 +9,6 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-
-@yield('script')
-
 <!-- Fonts -->
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v32.102/Vazirmatn-font-face.css" rel="stylesheet"
           type="text/css"/>
@@ -24,6 +19,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.rtl.min.css">
+
 
     <style>
         body {
@@ -98,7 +94,11 @@
     <main class="py-4">
         @yield('content')
     </main>
-    @include('sweet::alert')
 </div>
+<script src="{{asset('js/app.js')}}"></script>
+
+@yield('script')
+@include('sweet::alert')
+
 </body>
 </html>
