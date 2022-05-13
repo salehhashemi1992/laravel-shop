@@ -22,3 +22,7 @@ Route::middleware('auth')->group(function () {
     Route::get('profile/confirm_phone', [\App\Http\Controllers\Profile\TokenAuthController::class, 'confirm_phone'])->name('profile.phone_verify');
     Route::post('profile/confirm_phone', [\App\Http\Controllers\Profile\TokenAuthController::class, 'manage_confirm_phone']);
 });
+
+Route::get('products', [\App\Http\Controllers\ProductController::class, 'index']);
+Route::get('products/{product}', [\App\Http\Controllers\ProductController::class, 'single'])->name('product_details');
+Route::post('comments', [\App\Http\Controllers\HomeController::class, 'comment'])->name('send.comment');

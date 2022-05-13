@@ -129,4 +129,9 @@ class User extends Authenticatable implements MustVerifyEmail
         return !!$roles->intersect($this->roles)->all();
     }
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
 }

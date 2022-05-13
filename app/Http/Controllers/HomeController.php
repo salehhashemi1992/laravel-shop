@@ -25,4 +25,27 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function comment(Request $request)
+    {
+        if (!$request->ajax()) {
+            return response()->json([
+                'status' => 'درخواست فقط به صورت ajax پذیرفته می شود.'
+            ]);
+        }
+        $data = $request->validate([
+            'commentable_id' => 'required',
+            'commentable_type' => 'required',
+            'parent_id' => 'required',
+            'comment' => 'required',
+        ]);
+
+        auth()->user()->comments()->create($data);
+
+        return response()->json([
+            'status' => 'success'
+        ]);
+
+        return back();
+    }
 }

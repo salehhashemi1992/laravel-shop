@@ -12,4 +12,9 @@ class Product extends Model
     protected $fillable = [
         'title', 'price', 'description', 'inventory', 'view_count'
     ];
+
+    public function comments()
+    {
+        return $this->morphMany(Comment::class,'commentable');
+    }
 }
