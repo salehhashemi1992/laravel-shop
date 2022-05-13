@@ -13,7 +13,7 @@ Laravel is my lovely favorite PHP framework, so I worked on it and add some init
 - Adding Admin Authorization system as a Middleware
 - A simple admin panel for managing users (CRUD and search system)
 - A sample of how to use a template in laravel using slot, components, yield, etc.
-- Using of scss
+- Using of scss and adding Jquery to the bootstrap.js file
 - Using sweet alert system
 - Sending sms with notification system and queue management system
 - Using component tag system
@@ -22,6 +22,8 @@ Laravel is my lovely favorite PHP framework, so I worked on it and add some init
 - Working with migrations and adding some new migration files
 - Adding a helper php file to the composer.json
 - Implementing a complete ACL system to manage user roles and permissions 
+- Implementing a sample of polymorphic relationships for comments
+
 - etc
 
 This Project is based on laravel version 8.
