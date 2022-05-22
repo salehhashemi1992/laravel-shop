@@ -16,12 +16,13 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::query();
+        $products = Product::query()->withCount('comments');
         if ($phrase = \request('search')) {
             $products->where('name', 'LIKE', "%{$phrase}%")->orWhere('label', 'LIKE', "%{$phrase}%");
         }
 
         $products = $products->latest()->paginate(10);
+
         return view('admin.products.list', compact('products'));
     }
 

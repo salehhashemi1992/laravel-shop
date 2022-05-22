@@ -30,6 +30,7 @@
                             <th scope="col">آی دی محصول</th>
                             <th scope="col">نام محصول</th>
                             <th scope="col">تعداد موجودی</th>
+                            <th scope="col">تعداد نظرات</th>
                             <th scope="col">میزان بازدید</th>
                             <th scope="col">عملیات</th>
                         </tr>
@@ -41,6 +42,7 @@
                                 <td>{{$product->id}}</td>
                                 <td>{{$product->title}}</td>
                                 <td>{{$product->inventory}}</td>
+                                <td>{{$product->comments_count}}</td>
                                 <td>{{$product->view_count}}</td>
                                 <td>
                                     <a href="{{route('admin.products.edit', $product->id)}}"
