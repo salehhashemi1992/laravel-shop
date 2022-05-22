@@ -60,6 +60,26 @@
                         </li>
                     </ul>
                 </li>
+                <li class="sidebar-item  has-sub {{isStartsWith('admin.comments')}}">
+                    <a href="#" class='sidebar-link'>
+                        <i class="icon bi-people-fill"></i>
+                        <span>نظرات</span>
+                    </a>
+                    <ul class="submenu {{isStartsWith('admin.comments')}}">
+                        <li class="submenu-item">
+                            <a href="{{route('admin.comments.index')}}">
+                                <i class="icon bi-person-fill"></i>
+                                مشاهده نظرات</a>
+                        </li>
+                    </ul>
+                    <ul class="submenu {{isStartsWith('admin.comments')}}">
+                        <li class="submenu-item">
+                            <a href="{{route('admin.comments.unapproved')}}">
+                                <i class="icon bi-person-fill"></i>
+                                نظرات تایید نشده</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>

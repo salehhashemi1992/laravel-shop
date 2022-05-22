@@ -14,3 +14,6 @@ Route::resource('products', \App\Http\Controllers\Admin\ProductController::class
 
 Route::get('/users/{user}/permissions', [\App\Http\Controllers\Admin\User\PermissionController::class, 'create'])->name('users.permissions');
 Route::post('/users/{user}/permissions', [\App\Http\Controllers\Admin\User\PermissionController::class, 'manage'])->name('users.permissions.manage');
+
+Route::get('/comments/unapproved', [\App\Http\Controllers\Admin\CommentController::class, 'unapproved'])->name('comments.unapproved');
+Route::resource('comments', \App\Http\Controllers\Admin\CommentController::class)->only(['index', 'update', 'destroy']);
