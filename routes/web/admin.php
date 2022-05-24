@@ -17,3 +17,4 @@ Route::post('/users/{user}/permissions', [\App\Http\Controllers\Admin\User\Permi
 
 Route::get('/comments/unapproved', [\App\Http\Controllers\Admin\CommentController::class, 'unapproved'])->name('comments.unapproved');
 Route::resource('comments', \App\Http\Controllers\Admin\CommentController::class)->only(['index', 'update', 'destroy']);
+Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class);

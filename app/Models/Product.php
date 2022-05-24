@@ -13,8 +13,13 @@ class Product extends Model
         'title', 'price', 'description', 'inventory', 'view_count'
     ];
 
-    public function comments()
+    public function comments(): \Illuminate\Database\Eloquent\Relations\MorphMany
     {
-        return $this->morphMany(Comment::class,'commentable');
+        return $this->morphMany(Comment::class, 'commentable');
+    }
+
+    public function categories(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Category::class);
     }
 }
