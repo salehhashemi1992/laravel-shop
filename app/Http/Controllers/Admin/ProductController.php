@@ -49,9 +49,12 @@ class ProductController extends Controller
             'description' => ['required', 'string'],
             'price' => ['required', 'numeric'],
             'inventory' => ['required', 'numeric'],
+            'categories' => 'required'
         ]);
 
-        auth()->user()->products()->create($data);
+        $products = auth()->user()->products()->create($data);
+
+        $products->categories()->sync($data['categories']);
 
         alert()->success('محصول با موفقیت ایجاد شد');
 
@@ -83,9 +86,11 @@ class ProductController extends Controller
             'description' => ['required', 'string'],
             'price' => ['required', 'numeric'],
             'inventory' => ['required', 'numeric'],
+            'categories' => 'required'
         ]);
 
         $product->update($data);
+        $product->categories()->sync($data['categories']);
 
         alert()->success('محصول با موفقیت ویرایش شد');
 

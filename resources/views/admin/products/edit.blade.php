@@ -51,6 +51,21 @@
                                     </div>
                                 </div>
 
+                                <div class="col-md-4">
+                                    <label for="categories">دسته بندی ها</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <div class="position-relative">
+                                            <select class="choices form-select multiple-remove" name="categories[]" id="categories" multiple>
+                                                @foreach(\App\Models\Category::all() as $categories)
+                                                    <option value="{{$categories->id}}" {{in_array($categories->id, $product->categories->pluck('id')->toArray()) ? 'selected' : ''}}>{{$categories->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="col-12 d-flex justify-content-end">
                                     <button type="submit" class="btn btn-primary me-1 mb-1">ویرایش محصول</button>
                                     <a href="{{route('admin.products.index')}}" type="reset" class="btn btn-light-secondary me-1 mb-1">لغو</a>

@@ -47,16 +47,21 @@
                     </ul>
                 </li>
 
-                <li class="sidebar-item  has-sub {{isStartsWith('admin.products')}}">
+                <li class="sidebar-item  has-sub {{isStartsWith('admin.products')}} {{isStartsWith('admin.categories')}}">
                     <a href="#" class='sidebar-link'>
-                        <i class="icon bi-people-fill"></i>
+                        <i class="icon bi-shop"></i>
                         <span>محصولات</span>
                     </a>
-                    <ul class="submenu {{isStartsWith('admin.products')}}">
+                    <ul class="submenu {{isStartsWith('admin.products')}} {{isStartsWith('admin.categories')}}">
                         <li class="submenu-item">
                             <a href="{{route('admin.products.index')}}">
-                                <i class="icon bi-person-fill"></i>
                                 مدیریت محصولات</a>
+                        </li>
+                    </ul>
+                    <ul class="submenu {{isStartsWith('admin.categories')}} {{isStartsWith('admin.products')}}">
+                        <li class="submenu-item">
+                            <a href="{{route('admin.categories.index')}}">
+                                مدیریت دسته بندی ها</a>
                         </li>
                     </ul>
                 </li>
@@ -68,14 +73,12 @@
                     <ul class="submenu {{isStartsWith('admin.comments')}}">
                         <li class="submenu-item">
                             <a href="{{route('admin.comments.index')}}">
-                                <i class="icon bi-person-fill"></i>
                                 مشاهده نظرات</a>
                         </li>
                     </ul>
                     <ul class="submenu {{isStartsWith('admin.comments')}}">
                         <li class="submenu-item">
                             <a href="{{route('admin.comments.unapproved')}}">
-                                <i class="icon bi-person-fill"></i>
                                 نظرات تایید نشده</a>
                         </li>
                     </ul>
